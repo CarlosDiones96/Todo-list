@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(167, 142, 236);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1{
+    text-transform: capitalize;
+}
+
+span{
+    width: 80%;
+    padding-left: 1rem;
+}
+.todo-btn{
+    height: 40px;
+    width: 60px;
+}
+
+.addition-icon{
+    height: 36px;
+}
+.trash-icon{
+    height: 36px;
+    filter: invert();
+    background: rgba(42, 212, 119, 0.8);
+}
+.check-icon{
+    height: 36px;
+    filter: invert();
+    background:rgba(233, 61, 98, 0.8);    
+}
+
+.todo-input{
+    font-size: 28px;
+    width: 40%;
+}
+
+.todo{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    width: 40%;
+    background-color: white; /*test*/
+    margin:0.3rem 0;
+}
+
+
+
