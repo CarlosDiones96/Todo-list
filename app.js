@@ -1,37 +1,40 @@
-//Selector
-const todoInput = document.querySelector('.todo-input');
-const todoBtn = document.querySelector('.todo-btn');
 const todoList = document.querySelector('.todo-list');
+const addBtn = document.querySelector('.todo-btn');
+const inputText = document.querySelector('.todo-input');
 
-const checkElement = '<img class="check-icon" src="icons/check-mark.png">';
-const deleteElement = '<img class="trash-icon" src="icons/trash-can.png">';
+function createTodo(e){
+    e.preventDefault();
 
-//Event Listeners
-todoBtn.addEventListener('click', addTodo);
-todoList.addEventListener('click', deleteCheck);
-
-//Functions
-function addTodo(event){
-    event.preventDefault();
-    todoList.innerHTML+= 
-            `<li class="todo">
-                <span class="todo-text">
-                ${todoInput.value}
-                </span>
-                ${checkElement}
-                ${deleteElement}
-            </li>`;
-    todoInput.value = '';
-}
-
-function deleteCheck(e){
-    const item = e.target;
-    if(item.classList[0] === 'todo-list' ||
-     item.classList[0] === 'todo-container'){
+    const text = inputText.value;
+    if(text === ''){
         return;
     }
-    if(item){
-        item.remove();
+    const li = document.createElement('li');
+
+    const checkbox = document.createElement('input');
+    checkbox.classList.add('checkbox'); // add css 
+    checkbox.type = 'checkbox';
+
+    const paragraph = document.createElement('p');
+    paragraph.classList.add('para');
+    paragraph.textContent = text;
+
+    const remove = document.createElement('span');
+    remove.classList.add('remove'); // add css
+    remove.innerHTML = '&cross;';
+
+    li.appendChild(checkbox);
+    li.appendChild(paragraph);
+    li.appendChild(remove);
+
+    todoList.appendChild(li);
+
+    inputText.value = '';
+}
+
+addBtn.addEventListener('click', createTodo);
+addBtn.addEventListener('keypress', e => {
+    if(e.key === 'Enter'){
+        createTodo(e);
     }
-} 
-// Fix the bugs and improve the app. ==> Beginner Vanilla JavaScript Project Tutorial 39:00" 
+});

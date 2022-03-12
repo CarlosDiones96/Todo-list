@@ -14,10 +14,6 @@ h1{
     text-transform: capitalize;
 }
 
-span{
-    width: 80%;
-    padding-left: 1rem;
-}
 .todo-btn{
     height: 40px;
     width: 60px;
@@ -25,30 +21,4 @@ span{
 
 .addition-icon{
     height: 36px;
-}
-.trash-icon{
-    height: 36px;
-    filter: invert();
-    background: rgba(42, 212, 119, 0.8);
-    pointer-events: none;
-}
-.check-icon{
-    height: 36px;
-    filter: invert();
-    background:rgba(233, 61, 98, 0.8);    
-    pointer-events:none;
-}
-
-.todo-input{
-    font-size: 28px;
-    width: 40%;
-}
-
-.todo{
-    display: flex;
-    justify-content:flex-end;
-    align-items: center;
-    width: 40%;
-    background-color: white; /*test*/
-    margin:0.3rem 0;
 }
