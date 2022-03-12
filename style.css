@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Hubballi&display=swap');
+
+/*
+font-family: 'Fredoka One', cursive; 400
+font-family: 'Hubballi', cursive;  400
+*/
+
+
 *{
     margin: 0;
     padding: 0;
@@ -5,20 +13,97 @@
 }
 
 body{
-    background-color: rgb(167, 142, 236);
-    margin-left: auto;
-    margin-right: auto;
+    background: rgb(171,221,231);
+    background: linear-gradient(90deg, rgba(171,221,231,1) 0%, rgba(105,105,217,1) 100%);
+    font-family: 'Hubballi', cursive;
+}
+
+form{
+    padding: 3px 0;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    flex-flow: column nowrap;
+    width: 380px;
 }
 
 h1{
     text-transform: capitalize;
+    text-align: center;
+    margin-top: 5rem;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 2px;
+    text-shadow:1px 1px 5px gray;
+}
+
+ul{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    list-style: none;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px 0;
+    background: rgba(0 ,0 ,0 , 0.2);
+    width: 18.7rem;
 }
 
 .todo-btn{
-    height: 40px;
-    width: 60px;
+    height: 1.7rem;
+    width: 40px;
+    background: rgb(221, 245, 7);
+    border: none;
+    border-radius: 2px;
+}
+
+.todo-input{
+    width: 16rem;
+    font-size: 1.2rem;
+    border-radius: 2px;
+    border: none;
+    font-family: 'Hubballi', cursive;
+    font-size: 27px;
+    box-shadow:1px 1px 5px 1px gray;
 }
 
 .addition-icon{
-    height: 36px;
+    height: 1.2rem;
+    padding-top: 2px;
+}
+
+.complete{
+    text-decoration: line-through;
+    background-color: yellow;
+}
+
+.paragraph{
+    background: rgba(19, 233, 101, 0.87);
+    width: 88%;
+    font-size: 1rem;
+    text-indent: 10px;
+    color: black;
+    text-transform:lowercase;
+    letter-spacing: 1px;
+}
+
+.checkbox{
+    margin-left: 4px;
+}
+
+.remove{
+    padding-right: 2px;
+    background-color: rgb(250, 2, 2, 0.5);
+}
+.remove:hover{
+    padding-right: 2px;
+    background-color: rgb(250, 2, 2, 1);
 }

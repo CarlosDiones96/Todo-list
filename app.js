@@ -2,9 +2,8 @@ const todoList = document.querySelector('.todo-list');
 const addBtn = document.querySelector('.todo-btn');
 const inputText = document.querySelector('.todo-input');
 
+// FUNCTIONS
 function createTodo(e){
-    e.preventDefault();
-
     const text = inputText.value;
     if(text === ''){
         return;
@@ -16,7 +15,7 @@ function createTodo(e){
     checkbox.type = 'checkbox';
 
     const paragraph = document.createElement('p');
-    paragraph.classList.add('para');
+    paragraph.classList.add('paragraph');
     paragraph.textContent = text;
 
     const remove = document.createElement('span');
@@ -32,8 +31,39 @@ function createTodo(e){
     inputText.value = '';
 }
 
-addBtn.addEventListener('click', createTodo);
+function removeTodo(e){
+    e.parentElement.remove();
+}
+
+
+function toggleComplete(element){
+    if(element.checked === false){
+        element.nextSibling.classList.remove('complete'); // look at css
+    }else{
+        element.nextSibling.classList.add('complete');
+    }
+}
+
+// LISTENERS
+todoList.addEventListener('click', e => {
+    if(e.target.tagName === 'SPAN'){
+        removeTodo(e.target);
+    }
+});
+
+todoList.addEventListener('change', e => {
+    if(e.target.tagName === 'INPUT' && e.target.type === 'checkbox'){
+        toggleComplete(e.target);
+    }
+});
+
+addBtn.addEventListener('click', e => {
+    e.preventDefault();
+    createTodo();
+});
+
 addBtn.addEventListener('keypress', e => {
+    e.preventDefault();
     if(e.key === 'Enter'){
         createTodo(e);
     }
