@@ -30,11 +30,13 @@ span{
     height: 36px;
     filter: invert();
     background: rgba(42, 212, 119, 0.8);
+    pointer-events: none;
 }
 .check-icon{
     height: 36px;
     filter: invert();
     background:rgba(233, 61, 98, 0.8);    
+    pointer-events:none;
 }
 
 .todo-input{
@@ -50,6 +52,3 @@ span{
     background-color: white; /*test*/
     margin:0.3rem 0;
 }
-
-
-
